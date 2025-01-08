@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  ollama:
+    image: ollama/ollama
+    expose:
+      - 11434/tcp
+    ports:
+      - "11434:11434"
+    healthcheck:
+      test: ollama --version || exit 1
+    entrypoint: /root/entrypoint.sh
+    volumes:
+      - ./ollama:/root/.ollama
+      - ./llm/entrypoint.sh:/root/entrypoint.sh
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: always
+    container_name: qdrant
+    ports:
+      - 6333:6333
+      - 6334:6334
+    expose:
+      - 6333
+      - 6334
+      - 6335
+    volumes:
+      - ./database/storage:/qdrant/storage
