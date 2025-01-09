@@ -4,8 +4,8 @@ from typing import List
 
 
 class RoleEnum(str, Enum):
-    User: str = "user"
-    Assistant: str = "assistant"
+    User = "user"
+    Assistant = "assistant"
 
 
 @dataclass

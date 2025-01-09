@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class ContextErrorType(str, Enum):
-    InvalidParams: str = "Invalid params"
-    MemoryError: str = "Memory error"
-    InternalError: str = "Internal error"
-    KeyError: str = "Key error"
+    InvalidParams = "Invalid params"
+    MemoryError = "Memory error"
+    InternalError = "Internal error"
+    KeyError = "Key error"
 
 
 class ContextType(str, Enum):
-    Success: str = "Success"
+    Success = "Success"
