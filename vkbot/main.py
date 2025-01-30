@@ -1,7 +1,7 @@
 from vkbottle import API, Bot, BuiltinStateDispenser  # type: ignore
 
 from src import router
-from vkbot.config import AppConfig
+from config import AppConfig
 
 
 def run() -> None:

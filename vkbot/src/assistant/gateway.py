@@ -4,7 +4,7 @@ from returns.result import Result, Success, Failure
 
 from .types import AssistantErrorType  # type: ignore
 from .interface import AssistantGatewayInterface  # type: ignore
-from .schemas import AssistantResponse, AssistantContentType, RagData, QuizData  # type: ignore
+from .schemas import AssistantResponse,  RagData  # type: ignore
 
 from src.context import Dialog
 
@@ -17,7 +17,7 @@ class MockAssistantGateway(AssistantGatewayInterface):
 
         return Success(
             AssistantResponse(
-                content_data=QuizData(
+                content_data=AssistantResponse(
                     elements=[
                         "Первый вариант вопроса",
                         "Второй вариант вопроса",

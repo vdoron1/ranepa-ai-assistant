@@ -1,18 +1,18 @@
 
 
 services:
-  ollama:
-    image: ollama/ollama
-    expose:
-      - 11434/tcp
+  redis:
+    image: redis:latest
+    restart: always
     ports:
-      - "11434:11434"
-    healthcheck:
-      test: ollama --version || exit 1
-    entrypoint: /root/entrypoint.sh
+      - "6379:6379"
     volumes:
-      - ./ollama:/root/.ollama
-      - ./llm/entrypoint.sh:/root/entrypoint.sh
+      - /path/to/local/dаta:/root/redis
+      - /path/to/local/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_PASSWORD=my-password
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
 
   qdrant:
     image: qdrant/qdrant:latest
