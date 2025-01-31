@@ -8,18 +8,12 @@ from config import AppConfig
 from vkbottle import Bot
 from src.context.middlewares import RedisMiddleware
 
-bot = Bot('VK_TOKEN')
-
-# Регистрируем Middleware
-bot.labeler.message_view.register_middleware(RedisMiddleware)
-
-bot.run_forever()
-
 
 
 
 def run() -> None:
     bot = Bot(AppConfig.bot_config.token)
+    bot.labeler.message_view.register_middleware(RedisMiddleware)
 
     bot.labeler.load(router)
 
