@@ -5,8 +5,11 @@ from config import AppConfig
 
 
 
+
+
 def run() -> None:
     bot = Bot(AppConfig.bot_config.token)
+    bot.labeler.message_view.register_middleware(RedisMiddleware)
 
     bot.labeler.load(router)
 
