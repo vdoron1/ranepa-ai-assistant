@@ -7,8 +7,6 @@ router = BotLabeler()
 
 
 router.message_view.register_middleware(NoBotMiddleware())
-router.message_view.register_middleware(RegistrationMiddleware())
-router.message_view.register_middleware(InfoMiddleware())
 
 
 router.load(clear_router)
