@@ -1,12 +1,12 @@
 from vkbottle.bot import BotLabeler
-from .controllers import chat_router, clear_router
-from .controllers.middlewares import NoBotMiddleware, RegistrationMiddleware, InfoMiddleware
+from src.controllers import chat_router, clear_router
+from .controllers.middlewares import RegistrationMiddleware
 
 
 router = BotLabeler()
 
 
-router.message_view.register_middleware(NoBotMiddleware)
+router.message_view.register_middleware(RegistrationMiddleware)
 
 
 router.load(clear_router)
