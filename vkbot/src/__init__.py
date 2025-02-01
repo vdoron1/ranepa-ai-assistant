@@ -6,7 +6,7 @@ from .controllers.middlewares import NoBotMiddleware, RegistrationMiddleware, In
 router = BotLabeler()
 
 
-router.message_view.register_middleware(NoBotMiddleware())
+router.message_view.register_middleware(NoBotMiddleware)
 
 
 router.load(clear_router)
