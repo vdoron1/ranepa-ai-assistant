@@ -5,7 +5,7 @@ class ContextErrorType(str, Enum):
     InvalidParams = "Invalid params"
     MemoryError = "Memory error"
     InternalError = "Internal error"
-    KeyError = "ошибка"
+    KeyError = "KeyError"
 
 
 class ContextType(str, Enum):
